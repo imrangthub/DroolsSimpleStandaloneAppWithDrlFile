@@ -1,0 +1,24 @@
+package rules
+ 
+import com.imran.model.Product
+
+rule "Offer for Diamond"
+	when 
+		productObject: Product(type=="diamond")
+	then
+		productObject.setDiscount(15);
+	end
+	
+rule "Offer for Gold"
+	when 
+		productObject: Product(type=="gold")
+	then
+		productObject.setDiscount(25);
+	end
+	
+rule "Offer for Other"
+	when 
+		productObject: Product(type=="other")
+	then
+		productObject.setDiscount(5);
+	end
